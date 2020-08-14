@@ -1,6 +1,3 @@
-#!/usr/bin/env python
-# -*- coding: utf-8 -*-
-
 import requests
 
 DEFAULT_BASE_URI = "http://api.brewerydb.com/v2"
@@ -15,7 +12,6 @@ simple_endpoints = ["beers", "breweries", "categories", "events",
 single_param_endpoints = ["beer", "brewery", "category", "event",
                           "feature", "glass", "guild", "ingredient",
                           "location", "socialsite", "style", "menu"]
-
 
 class BreweryDb:
 
@@ -35,7 +31,7 @@ class BreweryDb:
 
     @staticmethod
     def _get(request, options):
-        options.update({"key": BreweryDb.API_KEY})
+        options.update({"key" : BreweryDb.API_KEY})
         return requests.get(BreweryDb.BASE_URI + request, params=options).json()
 
     @staticmethod
